@@ -1,3 +1,56 @@
+# Budget Tracker
+
+## Description
+
+Do you want to get in better financial shape?
+
+This budget tracker will allow you to log your finances into a handy app that you can take with you anywhere, even if you don't have internet access. All you need to do is visit the app and log your income or purchases with the click of a button, then you'll see the chart of how . multiple exercises in a workout on a given day. You can view up to seven days worth of workouts. You can track your resistance and cardio exercises, too. All you need to do is track the name, type, weight, sets, reps, and duration. If you're doing cardio, then you'll also be given the ability to track distance traveled. Weight, sets, reps, and distance are optional entries in case you do or don't need them.
+
+Get ready to be in the best shape of your life!
+
+This workout tracker was written in JavaScript using Express.js, Mongoose, Node.js, MongoDB Atlas, HTML, and CSS. It's deployed on Heroku.
+
+## Table of Contents
+
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+## Installation
+
+To install the application's dependencies, type the following:
+```md
+npm install
+```
+To run the server, type the following:
+```md
+npm start
+```
+Once those steps are done, you can view the application in your browser using localhost:3002.
+
+## Usage
+
+Navigate to [Sarah Mäkelä's Budget Tracker](https://cryptic-tor-06103.herokuapp.com/) and view the web page.
+
+* Once you're there, view your previous workout data.
+* Click New Workout to add a new exercise.
+* Pick a type of exercise.
+* Input the entries you need like name, weight, sets, reps, duration, and/or distance.
+* View your Last Workout data.
+
+![Sarah Mäkelä's Workout Tracker](./assets/budget-screenshot.png)
+
+## Credits
+
+Created by [Sarah Mäkelä](https://github.com/smakela13).
+
+## License
+
+This website currently has No License, which means it is under exclusive copyright. No one can copy, distribute, or modify this website without permission.
+
+
 # Unit 18 PWA Homework: Online/Offline Budget Trackers
 
 Add functionality to our existing Budget Tracker application to allow for offline access and functionality.
