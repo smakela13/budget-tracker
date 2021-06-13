@@ -4,11 +4,11 @@
 
 Do you want to get in better financial shape?
 
-This budget tracker will allow you to log your finances into a handy app that you can take with you anywhere, even if you don't have internet access. All you need to do is visit the app and log your income or purchases with the click of a button, then you'll see the chart of how . multiple exercises in a workout on a given day. You can view up to seven days worth of workouts. You can track your resistance and cardio exercises, too. All you need to do is track the name, type, weight, sets, reps, and duration. If you're doing cardio, then you'll also be given the ability to track distance traveled. Weight, sets, reps, and distance are optional entries in case you do or don't need them.
+This budget tracker will allow you to log your finances into a handy app that you can take with you anywhere, even if you don't have internet access. All you need to do is visit the app and log your deposits or purchases with the click of a button, then you'll see the chart of how much money you currently have. If you use the application offline, when you once again have internet, you'll be able to see the changes online, too.
 
-Get ready to be in the best shape of your life!
+Get ready to excel at budgeting!
 
-This workout tracker was written in JavaScript using Express.js, Mongoose, Node.js, MongoDB Atlas, HTML, and CSS. It's deployed on Heroku.
+This budget tracker was written in JavaScript using Express.js, Mongoose, Node.js, IndexedDB, MongoDB Atlas, Service Worker API, HTML, and CSS. It's deployed on Heroku.
 
 ## Table of Contents
 
@@ -34,11 +34,9 @@ Once those steps are done, you can view the application in your browser using lo
 
 Navigate to [Sarah Mäkelä's Budget Tracker](https://cryptic-tor-06103.herokuapp.com/) and view the web page.
 
-* Once you're there, view your previous workout data.
-* Click New Workout to add a new exercise.
-* Pick a type of exercise.
-* Input the entries you need like name, weight, sets, reps, duration, and/or distance.
-* View your Last Workout data.
+* Once you're there, enter deposits or purchases whether you're online or offline.
+* View chart to see how much money you have.
+* Continue to add entries.
 
 ![Sarah Mäkelä's Workout Tracker](./assets/budget-screenshot.png)
 
@@ -49,75 +47,3 @@ Created by [Sarah Mäkelä](https://github.com/smakela13).
 ## License
 
 This website currently has No License, which means it is under exclusive copyright. No one can copy, distribute, or modify this website without permission.
-
-
-# Unit 18 PWA Homework: Online/Offline Budget Trackers
-
-Add functionality to our existing Budget Tracker application to allow for offline access and functionality.
-
-The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
-
-Offline Functionality:
-
-  * Enter deposits offline
-
-  * Enter expenses offline
-
-When brought back online:
-
-  * Offline entries should be added to tracker.
-
-## User Story
-AS AN avid traveller
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
-
-## Business Context
-
-Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.
-
-
-## Acceptance Criteria
-GIVEN a user is on Budget App without an internet connection
-WHEN the user inputs a withdrawal or deposit
-THEN that will be shown on the page, and added to their transaction history when their connection is back online.
-
-- - -
-
-## Commit Early and Often
-
-* One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-* Follow these guidelines for committing:
-
-  * Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-  * Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-  * Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-  * Test your application before you commit to ensure functionality at every step in the development process
-
-* We would like you to have well over 200 commits by graduation, so commit early and often!
-
-* Deploy your application with [Heroku and MongoDB Atlas.](../04-Important/MongoAtlas-Deploy.md)
-
-## Submission on BCS
-
-* You are required to submit the following:
-
-  * the URL to the deployed application
-
-  * the URL to the Github repository
-
-- - -
-
-## Hint
-
-* In order to cache dynamic content, i.e. users' inputs for withdrawals or deposits, incorporate `indexedDB` from the previous module.
-
-* Use [Google](https://www.google.com) or another search engine to research this topic.
