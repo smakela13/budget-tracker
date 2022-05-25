@@ -32,17 +32,17 @@ Once those steps are done, you can view the application in your browser using lo
 
 ## Usage
 
-Navigate to [Sarah Mäkelä's Budget Tracker](https://cryptic-tor-06103.herokuapp.com/) and view the web page.
+Navigate to [Soma Mäkelä's Budget Tracker](https://cryptic-tor-06103.herokuapp.com/) and view the web page.
 
 * Once you're there, enter deposits or purchases whether you're online or offline.
 * View chart to see how much money you have.
 * Continue to add entries.
 
-![Sarah Mäkelä's Workout Tracker](./assets/budget-screenshot.png)
+![Soma Mäkelä's Workout Tracker](./assets/budget-screenshot.png)
 
 ## Credits
 
-Created by [Sarah Mäkelä](https://github.com/smakela13).
+Created by [Soma Mäkelä](https://github.com/smakela13).
 
 ## License
 
