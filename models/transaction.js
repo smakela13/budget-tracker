@@ -8,7 +8,12 @@ const transactionSchema = new Schema(
       type: String,
       trim: true,
       required: "Transaction name is required.",
-      maxlength: [120, "Transaction name should not exceed 100 characters."]
+      minlength: [3, "Transaction name must be at least 3 characters long."],
+      maxlength: [100, "Transaction name should not exceed 100 characters."],
+      validate: function(v) {
+        return typeof v === 'string' && !Number.isFinite(v) && isNaN(Number(v));
+      },
+      message: "Name should be a string and not a number."
     },
     value: {
       type: Number,
