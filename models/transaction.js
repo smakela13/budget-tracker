@@ -1,17 +1,24 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const transactionSchema = new Schema(
   {
     name: {
       type: String,
       trim: true,
-      required: "Enter a name for transaction"
+      required: "Transaction name is required.",
+      maxlength: [120, "Transaction name should not exceed 100 characters."]
     },
     value: {
       type: Number,
-      required: "Enter an amount"
+      required: "Enter an amount.",
+      validate: {
+        validator: function(amount) {
+          return amount !== 0;
+        },
+        message: "Amount cannot be zero."
+      }
     },
     date: {
       type: Date,
