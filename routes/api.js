@@ -3,31 +3,32 @@ const Transaction = require("../models/transaction.js");
 
 router.post("/api/transaction", ({body}, res) => {
   Transaction.create(body)
-    .then(dbTransaction => {
+    .then((dbTransaction) => {
       res.json(dbTransaction);
     })
-    .catch(err => {
-      res.status(404).json(err);
+    .catch((err) => {
+      next(err);
     });
 });
 
 router.post("/api/transaction/bulk", ({body}, res) => {
   Transaction.insertMany(body)
-    .then(dbTransaction => {
-      res.json(dbTransaction);
-    })
-    .catch(err => {
-      res.status(404).json(err);
-    });
+		.then((dbTransaction) => {
+			res.json(dbTransaction);
+		})
+		.catch((err) => {
+			next(err);
+		});
 });
 
 router.get("/api/transaction", (req, res) => {
   Transaction.find({}).sort({date: -1})
-    .then(dbTransaction => {
+    .then((dbTransaction) => {
       res.json(dbTransaction);
     })
-    .catch(err => {
-      res.status(404).json(err);
+    .catch((err) => {
+      err.status = 404;
+      next(err);
     });
 });
 
