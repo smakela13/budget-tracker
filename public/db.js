@@ -73,4 +73,4 @@ function checkDatabase() {
 
 window.addEventListener('online', checkDatabase);
 
-export { saveRecord };
+module.exports = { saveRecord: saveRecord };
