@@ -1,4 +1,6 @@
-let transactions = [];
+import { saveRecord } from "./db";
+
+let transactions = []
 let myChart;
 
 fetch("/api/transaction")
@@ -29,15 +31,16 @@ function populateTable() {
   tbody.innerHTML = "";
 
   transactions.forEach(transaction => {
-    // create and populate a table row
-    let tr = document.createElement("tr");
-    tr.innerHTML = `
+		// create and populate a table row
+		let tr = document.createElement("tr");
+		tr.innerHTML = `
       <td>${transaction.name}</td>
       <td>${transaction.value}</td>
+      <td>${transaction.date}</td>
     `;
 
-    tbody.appendChild(tr);
-  });
+		tbody.appendChild(tr);
+	});
 }
 
 function populateChart() {
@@ -96,7 +99,7 @@ function sendTransaction(isAdding) {
   let transaction = {
     name: nameEl.value,
     value: amountEl.value,
-    date: new Date().toISOString()
+    date: new Date().toLocaleDateString('en-US'),
   };
 
   // if subtracting funds, convert amount to negative number
@@ -151,50 +154,3 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
-
-// IndexedDB to allow adding income and purchases offline
-const request = indexedDB.open('purchaseDB', 1);
-
-request.onupgradeneeded = function (event) {
-	const db = event.target.result;
-	db.createObjectStore('purchases', { autoIncrement: true });
-};
-request.onsuccess = function (event) {
-	db = event.target.result;
-	if (navigator.onLine) {
-		checkDatabase();
-	}
-};
-
-function saveRecord(record) {
-	const transaction = db.transaction(['purchases'], 'readwrite');
-
-	const store = transaction.objectStore('purchases');
-	store.add(record);
-}
-
-function checkDatabase() {
-	const transaction = db.transaction(['purchases'], 'readwrite');
-	const store = transaction.objectStore('purchases');
-	const getAll = store.getAll();
-
-	getAll.onsuccess = function () {
-		if (getAll.result.length > 0) {
-			fetch('/api/transaction/bulk', {
-				method: 'POST',
-				body: JSON.stringify(getAll.result),
-				headers: {
-					Accept: 'application/json, text/plain, /',
-					'Content-Type': 'application/json',
-				},
-			})
-				.then((response) => response.json())
-				.then(() => {
-					const transaction = db.transaction(['purchases'], 'readwrite');
-					const store = transaction.objectStore('purchases');
-					store.clear();
-				});
-		}
-	};
-}
-window.addEventListener('online', checkDatabase);
