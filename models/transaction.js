@@ -18,6 +18,7 @@ const transactionSchema = new Schema(
     value: {
       type: Number,
       required: "Enter an amount.",
+      min: [1, "Amount cannot be negative."],
       validate: {
         validator: function(amount) {
           return amount !== 0;
