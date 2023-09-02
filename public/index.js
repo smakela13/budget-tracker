@@ -1,4 +1,4 @@
-import { saveRecord } from "./db";
+const { saveRecord } = require('./public/db');
 
 let transactions = []
 let myChart;
