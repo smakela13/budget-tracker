@@ -17,7 +17,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "chai": "^4.3.8",
+    "chai": "^4.3.10",
     "mocha": "^10.2.0"
   }
 }
